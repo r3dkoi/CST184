@@ -1,0 +1,9 @@
+# Common data science packages for CST184 coursework
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+scikit-learn
+jupyter
+ipython
