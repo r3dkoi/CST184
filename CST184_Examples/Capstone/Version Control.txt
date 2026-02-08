@@ -1,0 +1,35 @@
+Version Control Summary — 08/02/2026 (AWST)
+
+Project: Capstone — Project 2 (Climate Data Analysis)
+Notebook: Project 2.ipynb
+
+-------------------------------------------------------------------------------
+CHANGES COMPLETED
+-------------------------------------------------------------------------------
+8-2-2026
+Step 1 — Data importing and cleaning
+• Loaded climate dataset: owid_climate_data.csv into main_df using pandas.
+• Performed initial exploration: head(), index, columns, info, and null check (isnull()) on the 26,182-row dataset.
+• Dropped rows with missing values in "CO2 Emissions Per Capita" and "Annual Temperature Anomaly".
+• Clean dataset size: 14,319 rows × 5 columns (Country Name, Country Code, Year, CO2 Emissions Per Capita, Annual Temperature Anomaly).
+
+Step 2 — Sets and functions
+• Built country set: extracted "Country Name" and used drop_duplicates() to get unique countries.
+• Created country_name_df: dataframe of unique country names only.
+• Created year_df: dataframe containing the Year column.
+• Created country_name_and_year_range_df: combined country names with year data (187 unique country–year entries).
+• Implemented get_country_data(df, country, start_year, end_year): filters the dataframe by country and year range (inclusive); returns matching rows.
+• Tested get_country_data() with country "Czechia", start_year 1930, end_year 2020; returned 1 row (Czechia, 1940).
+
+-------------------------------------------------------------------------------
+FILES MODIFIED / ADDED
+-------------------------------------------------------------------------------
+• Project 2.ipynb — Data import, cleaning, and filtering logic added (Steps 1 and 2).
+• Version Control.txt — This summary (08/02/2026).
+
+-------------------------------------------------------------------------------
+NOTES
+-------------------------------------------------------------------------------
+• Cell 2 uses variable "df" in the dropna assignment; ensure the cleaned result is assigned to main_df (e.g. main_df = main_df.dropna(...)) so later cells use the cleaned data consistently.
+• Cell 4 references "df" when building country_name_df; should align with the same dataframe variable (main_df) used after cleaning.
+
