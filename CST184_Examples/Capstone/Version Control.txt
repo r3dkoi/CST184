@@ -33,3 +33,27 @@ NOTES
 • Cell 2 uses variable "df" in the dropna assignment; ensure the cleaned result is assigned to main_df (e.g. main_df = main_df.dropna(...)) so later cells use the cleaned data consistently.
 • Cell 4 references "df" when building country_name_df; should align with the same dataframe variable (main_df) used after cleaning.
 
+CHANGES COMPLETED
+-------------------------------------------------------------------------------
+11-2-2026
+Step 3 — Logical filtering and visualisation
+- Filtered main_df for countries with CO2 Emissions Per Capita > 10 metric tonnes in 2020.
+- Created country_year_and_co2_filtered: filtered dataset containing countries meeting the emission threshold.
+- Dropped "Annual Temperature Anomaly" and "Country Code" columns from filtered results for cleaner output.
+- visualised filtered data using matplotlib bar chart: x-axis = "Country Name", y-axis = "CO2 Emissions Per Capita".
+- Chart titled "Countries where CO2 Emissions are above 10 metric tonnes in 2020" with y-axis labeled "Tonnes".
+- Created country_co2_and_temperature_df: subset of main_df with "Country Code" and "Year" columns removed, retaining "Country Name", "CO2 Emissions Per Capita", and "Annual Temperature Anomaly".
+
+Step 4 — Probability and summary statistics
+- Created annual_temperature_and_year_df: subset of main_df containing only "Year" and "Annual Temperature Anomaly" columns (dropped "Country Name", "Country Code", and "CO2 Emissions Per Capita").
+- Implemented get_mean_temperature_data(df): calculates mean temperature anomaly for each year across all countries using groupby() and mean().
+- Function returns dataframe with columns renamed to "Year" and "Mean Temperature".
+- Tested get_mean_temperature_data() on annual_temperature_and_year_df; successfully computed yearly mean temperature anomalies.
+
+-------------------------------------------------------------------------------
+NOTES
+-------------------------------------------------------------------------------
+- Step 3 includes test code (main_df.drop(columns=[...])) that displays temporary outputs without reassignment; final dataframes (country_year_and_co2_filtered, country_co2_and_temperature_df) are correctly assigned.
+- matplotlib.pyplot imported as plt for visualization in Step 3.
+- get_mean_temperature_data() function uses .reset_index() to convert grouped data back to dataframe format with explicit column naming.
+- Consider verifying that main_df remains unmodified throughout Steps 3 and 4, as multiple drop() operations were performed for testing and subset creation.
